@@ -1,3 +1,8 @@
+<div>
+<a href="https://play.google.com/store/apps/details?id=vn.vstore.codeguide">
+    <img src="images/google_play.png" />
+</a>
+</div>
 <h2>How to use source code</h2>
 Copy the the source code of each widget, screen, dashboard,.. and include in your own Flutter Project.
 <br />You can refer to following dart packages.
