@@ -8,14 +8,15 @@ import '../utils/T8Colors.dart';
 
 class T8Cards extends StatefulWidget {
   static String tag = '/T8Cards';
-
+  
   @override
   T8CardsState createState() => T8CardsState();
 }
 
 class T8CardsState extends State<T8Cards> {
   List<Widget> cardList = [];
-
+  final Color scaffoldBackgroundColor = Color(0xFFEFEFEF);
+  
   void removeCards(index) {
     setState(() {
       cardList.removeAt(index);
@@ -44,7 +45,7 @@ class T8CardsState extends State<T8Cards> {
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
-        decoration: boxDecoration(showShadow: false, bgColor: context.scaffoldBackgroundColor, radius: 10, color: t8_view_color),
+        decoration: boxDecoration(showShadow: false, bgColor: scaffoldBackgroundColor, radius: 10, color: t8_view_color),
         padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
         width: 320,
         child: Stack(
@@ -90,7 +91,7 @@ class T8CardsState extends State<T8Cards> {
             feedback: Material(
               child: GestureDetector(
                 child: Container(
-                  decoration: boxDecoration(radius: 20, bgColor: context.scaffoldBackgroundColor, showShadow: true),
+                  decoration: boxDecoration(radius: 20, bgColor: scaffoldBackgroundColor, showShadow: true),
                   child: Column(
                     children: <Widget>[
                       Container(
@@ -128,7 +129,7 @@ class T8CardsState extends State<T8Cards> {
             ),
             child: GestureDetector(
               child: Container(
-                decoration: boxDecoration(radius: 20, bgColor: context.scaffoldBackgroundColor, showShadow: true),
+                decoration: boxDecoration(radius: 20, bgColor: scaffoldBackgroundColor, showShadow: true),
                 child: Column(
                   children: <Widget>[
                     Container(
