@@ -31,7 +31,7 @@ class T1DashboardState extends State<T1Dashboard> {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

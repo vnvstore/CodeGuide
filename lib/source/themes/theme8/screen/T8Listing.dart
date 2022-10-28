@@ -29,7 +29,7 @@ class T8ListingState extends State<T8Listing> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       appBar: appBar(context, t8_lbl_biology_basics),

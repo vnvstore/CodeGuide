@@ -29,7 +29,7 @@ class T12SearchScreenState extends State<T12SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     var searchList = ListView.builder(
         shrinkWrap: true,

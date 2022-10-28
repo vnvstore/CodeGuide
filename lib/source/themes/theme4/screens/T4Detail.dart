@@ -33,7 +33,7 @@ class T4DetailState extends State<T4Detail> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

@@ -23,7 +23,7 @@ class T13FilterScreenState extends State<T13FilterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     Widget mLabel(String value) {
       return text(value.toUpperCase(), textColor: appStore.textPrimaryColor);

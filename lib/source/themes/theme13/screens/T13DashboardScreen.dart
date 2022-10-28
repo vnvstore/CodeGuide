@@ -37,7 +37,7 @@ class T13DashboardScreenState extends State<T13DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     var width = MediaQuery.of(context).size.width;
 
@@ -246,7 +246,7 @@ class T13DashboardScreenState extends State<T13DashboardScreen> {
           Container(
             margin: EdgeInsets.all(16),
             height: 70,
-            decoration: boxDecoration(color: appStore.appBarColor!, showShadow: true),
+            decoration: boxDecoration(color: appStore.appBarColor, showShadow: true),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

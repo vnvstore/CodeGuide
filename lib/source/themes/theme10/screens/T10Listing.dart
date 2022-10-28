@@ -30,7 +30,7 @@ class T10ListingState extends State<T10Listing> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       body: SafeArea(

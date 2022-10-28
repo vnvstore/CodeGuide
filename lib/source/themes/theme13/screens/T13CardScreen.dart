@@ -32,7 +32,7 @@ class T13CardScreenState extends State<T13CardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
     var mTop = Container(
       margin: EdgeInsets.only(left: spacing_large, right: spacing_large, bottom: spacing_standard_new),

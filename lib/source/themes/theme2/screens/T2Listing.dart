@@ -34,7 +34,7 @@ class T2ListingState extends State<T2Listing> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
         appBar: appBar(context, t2_Listing),

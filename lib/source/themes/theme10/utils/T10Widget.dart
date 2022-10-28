@@ -52,10 +52,10 @@ class EditTextState extends State<EditText> {
           hintStyle: secondaryTextStyle(),
           labelStyle: secondaryTextStyle(),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+            borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
           ),
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+            borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
           ),
         ),
         maxLines: widget.maxLine,
@@ -81,10 +81,10 @@ class EditTextState extends State<EditText> {
           hintStyle: secondaryTextStyle(),
           labelStyle: secondaryTextStyle(),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+            borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
           ),
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+            borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
           ),
         ),
         style: TextStyle(fontSize: widget.fontSize, color: appStore.textPrimaryColor, fontFamily: widget.fontFamily),

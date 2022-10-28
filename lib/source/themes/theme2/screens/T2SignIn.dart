@@ -33,7 +33,7 @@ class T2SignInState extends State<T2SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       body: Observer(
         builder: (_) => SingleChildScrollView(

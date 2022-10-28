@@ -19,7 +19,7 @@ class T11SettingScreenState extends State<T11SettingScreen> {
 
   @override
   void initState() {
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor, statusBarIconBrightness: Brightness.dark);
     super.initState();
   }
 

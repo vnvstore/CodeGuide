@@ -19,7 +19,7 @@ class T10SignIn extends StatefulWidget {
 class T10SignInState extends State<T10SignIn> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       body: SingleChildScrollView(

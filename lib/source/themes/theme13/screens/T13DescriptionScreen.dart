@@ -44,7 +44,7 @@ class T13DescriptionScreenState extends State<T13DescriptionScreen> {
                   child: Column(
                     children: <Widget>[
                       Container(
-                        decoration: boxDecoration(bgColor: appStore.appBarColor!.withOpacity(0.7), radius: 10.0),
+                        decoration: boxDecoration(bgColor: appStore.appBarColor.withOpacity(0.7), radius: 10.0),
                         padding: EdgeInsets.all(spacing_standard_new),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

@@ -32,7 +32,7 @@ class T9BottomNavigationState extends State<T9BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: t9_layout_background,
       bottomNavigationBar: Container(

@@ -32,7 +32,7 @@ class T7HotelListState extends State<T7HotelList> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       body: ListView(

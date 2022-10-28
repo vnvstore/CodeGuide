@@ -31,7 +31,7 @@ class T3SearchState extends State<T3Search> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       body: Container(

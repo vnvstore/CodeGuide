@@ -49,7 +49,7 @@ class T2DashboardState extends State<T2Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
     return Observer(
       builder: (_) => Scaffold(

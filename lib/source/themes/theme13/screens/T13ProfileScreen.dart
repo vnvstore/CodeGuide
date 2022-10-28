@@ -30,7 +30,7 @@ class T13ProfileScreenState extends State<T13ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
 
     var mProfileHeader = Container(

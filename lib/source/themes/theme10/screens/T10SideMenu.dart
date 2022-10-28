@@ -20,7 +20,7 @@ class T10SideMenu extends StatefulWidget {
 class T10SideMenuState extends State<T10SideMenu> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 

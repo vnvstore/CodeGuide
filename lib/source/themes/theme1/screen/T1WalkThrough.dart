@@ -19,7 +19,7 @@ class T1WalkThrough extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       body: Container(
         child: IntroScreen(

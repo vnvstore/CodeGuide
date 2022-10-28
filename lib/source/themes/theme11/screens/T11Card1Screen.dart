@@ -23,7 +23,7 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
   @override
   void initState() {
     super.initState();
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor, statusBarIconBrightness: Brightness.dark);
     musicList = generateAlbumMusic();
   }
 

@@ -18,7 +18,7 @@ class T8Setting extends StatefulWidget {
 class T8SettingState extends State<T8Setting> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

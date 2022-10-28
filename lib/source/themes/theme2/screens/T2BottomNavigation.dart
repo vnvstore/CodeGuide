@@ -32,7 +32,7 @@ class T2BottomNavigationState extends State<T2BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
         appBar: appBar(context, t2_bottom_navigation),

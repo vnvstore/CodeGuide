@@ -22,7 +22,7 @@ class T6SignUp extends StatefulWidget {
 class T6SignUpState extends State<T6SignUp> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(

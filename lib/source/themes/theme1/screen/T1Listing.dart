@@ -34,7 +34,7 @@ class T1ListingState extends State<T1Listing> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       appBar: appBar(context, t1_Listing),
       body: Observer(

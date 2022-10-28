@@ -19,7 +19,7 @@ class T11SignUpScreen extends StatefulWidget {
 class T11SignUpScreenState extends State<T11SignUpScreen> {
   @override
   void initState() {
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor, statusBarIconBrightness: Brightness.dark);
     super.initState();
   }
 

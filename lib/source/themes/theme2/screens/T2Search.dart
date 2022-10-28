@@ -23,7 +23,7 @@ class T2Search extends StatefulWidget {
 class T2SearchState extends State<T2Search> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       appBar: appBar(context, t2_lbl_search),

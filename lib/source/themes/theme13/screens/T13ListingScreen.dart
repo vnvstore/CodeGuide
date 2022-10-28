@@ -29,7 +29,7 @@ class T13ListingScreenState extends State<T13ListingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       appBar: appBar(context, t13_lbl_list),

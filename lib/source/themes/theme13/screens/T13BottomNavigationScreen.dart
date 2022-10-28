@@ -50,7 +50,7 @@ class T13BottomNavigationScreenState extends State<T13BottomNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
@@ -61,7 +61,7 @@ class T13BottomNavigationScreenState extends State<T13BottomNavigationScreen> {
           Container(
             margin: EdgeInsets.all(16),
             height: 70,
-            decoration: boxDecoration(showShadow: true, color: appStore.appBarColor!),
+            decoration: boxDecoration(showShadow: true, color: appStore.appBarColor),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[

@@ -35,7 +35,7 @@ class T12ProfileState extends State<T12Profile> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var cardHight = (width - 48) * (9 / 16);
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       appBar: appBar(context, "Profile"),

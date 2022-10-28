@@ -83,7 +83,7 @@ class T2EditTextFieldState extends State<T2EditTextField> {
         style: TextStyle(fontSize: widget.fontSize, color: appStore.textPrimaryColor, fontFamily: widget.fontFamily),
         decoration: InputDecoration(
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.iconColor!),
+            borderSide: BorderSide(color: appStore.iconColor),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: t2_colorPrimary),
@@ -106,7 +106,7 @@ class T2EditTextFieldState extends State<T2EditTextField> {
               child: Icon(widget.isPassword ? Icons.visibility : Icons.visibility_off, color: appStore.iconColor),
             ),
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: appStore.iconColor!),
+              borderSide: BorderSide(color: appStore.iconColor),
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: t2_colorPrimary),

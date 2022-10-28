@@ -26,7 +26,7 @@ class T1Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       appBar: appBar(context, t1_card_title),
       body: Observer(

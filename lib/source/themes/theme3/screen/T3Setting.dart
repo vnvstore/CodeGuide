@@ -21,7 +21,7 @@ class T3SettingState extends State<T3Setting> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       appBar: appBar(context, t3_lbl_setting),

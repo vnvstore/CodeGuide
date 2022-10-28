@@ -30,7 +30,7 @@ class T2ImageSliderState extends State<T2ImageSlider> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       appBar: appBar(context, t2_Image_Slider),

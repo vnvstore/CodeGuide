@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import '../../utils/AppWidget.dart';
-import 't12_dashboard.dart';
+import 'T12Dashboard.dart';
 import '../utils/t12_colors.dart';
 import '../utils/t12_constant.dart';
 import '../utils/t12_images.dart';

@@ -21,7 +21,7 @@ class T11BottomNavigationScreenState extends State<T11BottomNavigationScreen> {
 
   @override
   void initState() {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     super.initState();
   }
 

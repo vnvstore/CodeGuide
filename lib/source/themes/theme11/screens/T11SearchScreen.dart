@@ -25,7 +25,7 @@ class T11SearchScreenState extends State<T11SearchScreen> {
   @override
   void initState() {
     super.initState();
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
   }
 
   @override

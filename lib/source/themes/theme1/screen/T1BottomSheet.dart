@@ -97,7 +97,7 @@ class T1BottomSheetState extends State<T1BottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     Future.delayed(
       Duration(milliseconds: 1000),

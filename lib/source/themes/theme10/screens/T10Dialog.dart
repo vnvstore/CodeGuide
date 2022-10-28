@@ -22,7 +22,7 @@ class T10Dialog extends StatefulWidget {
 class T10DialogState extends State<T10Dialog> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     Future.delayed(const Duration(milliseconds: 500), () {
       showDialog(
@@ -101,10 +101,10 @@ dialogContent(BuildContext context) {
               hintText: theme10_lbl_resend_code,
               hintStyle: secondaryTextStyle(),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: appStore.textSecondaryColor!, width: 0.0),
+                borderSide: BorderSide(color: appStore.textSecondaryColor, width: 0.0),
               ),
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: appStore.textSecondaryColor!, width: 0.0),
+                borderSide: BorderSide(color: appStore.textSecondaryColor, width: 0.0),
               ),
             ),
             keyboardType: TextInputType.number,

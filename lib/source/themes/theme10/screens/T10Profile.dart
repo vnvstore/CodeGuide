@@ -30,7 +30,7 @@ class T10ProfileState extends State<T10Profile> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(

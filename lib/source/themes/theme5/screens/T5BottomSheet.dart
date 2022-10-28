@@ -61,7 +61,7 @@ class T5BottomSheetState extends State<T5BottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     scaffoldKey = new GlobalKey<ScaffoldState>();
     Future.delayed(Duration(milliseconds: 1000), () {
       showSheet(context);

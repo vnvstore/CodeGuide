@@ -21,7 +21,7 @@ class T10Description extends StatefulWidget {
 class T10DescriptionState extends State<T10Description> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     var width = MediaQuery.of(context).size.width;
 
     Widget mTag(var value) {

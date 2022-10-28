@@ -19,7 +19,7 @@ class T11ProfileScreen extends StatefulWidget {
 class T11ProfileScreenState extends State<T11ProfileScreen> {
   @override
   void initState() {
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor, statusBarIconBrightness: Brightness.dark);
     super.initState();
   }
 

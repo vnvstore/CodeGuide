@@ -21,7 +21,7 @@ class T1Search extends StatefulWidget {
 class T1SearchState extends State<T1Search> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
         resizeToAvoidBottomInset: false,

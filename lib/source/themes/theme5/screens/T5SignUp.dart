@@ -23,7 +23,7 @@ class T5SignUp extends StatefulWidget {
 class T5SignUpState extends State<T5SignUp> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;

@@ -34,7 +34,7 @@ class T4CardsState extends State<T4Cards> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

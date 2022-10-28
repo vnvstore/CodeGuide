@@ -37,7 +37,7 @@ class T7SignInState extends State<T7SignIn> with SingleTickerProviderStateMixin 
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       body: SafeArea(

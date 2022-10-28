@@ -23,7 +23,7 @@ class T3TabState extends State<T3Tab> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return SafeArea(
       child: Observer(

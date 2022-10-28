@@ -32,7 +32,7 @@ class T5BottomNavigationState extends State<T5BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       bottomNavigationBar: BubbleBottomBar(

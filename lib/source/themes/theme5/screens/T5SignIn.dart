@@ -25,7 +25,7 @@ class T5SignInState extends State<T5SignIn> {
     changeStatusColor(t5White);
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(

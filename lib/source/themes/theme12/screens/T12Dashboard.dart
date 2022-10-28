@@ -137,7 +137,7 @@ class T12DashboardState extends State<T12Dashboard> {
       },
     );
 
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       body: NestedScrollView(

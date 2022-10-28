@@ -129,7 +129,7 @@ class SearchState extends State<Search> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(20.0),

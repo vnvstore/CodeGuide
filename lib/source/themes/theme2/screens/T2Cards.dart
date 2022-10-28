@@ -32,7 +32,7 @@ class T2CardsState extends State<T2Cards> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       appBar: appBar(context, t2_Cards),
       body: Observer(

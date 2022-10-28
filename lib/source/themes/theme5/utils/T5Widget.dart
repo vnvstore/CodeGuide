@@ -348,11 +348,11 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
           counterText: "",
           border: widget.showFieldAsBox
               ? OutlineInputBorder(
-                  borderSide: BorderSide(width: 2.0, color: appStore.iconColor!),
+                  borderSide: BorderSide(width: 2.0, color: appStore.iconColor),
                 )
               : null,
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: appStore.iconColor!),
+            borderSide: BorderSide(color: appStore.iconColor),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: t5ColorPrimary),

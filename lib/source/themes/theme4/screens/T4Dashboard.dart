@@ -50,7 +50,7 @@ class T4DashboardState extends State<T4Dashboard> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

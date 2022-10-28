@@ -24,7 +24,7 @@ class T3CardsState extends State<T3Cards> {
     super.initState();
     mListings = getList();
     afterBuildCreated(() {
-      changeStatusColor(appStore.appBarColor!);
+      changeStatusColor(appStore.appBarColor);
     });
   }
 

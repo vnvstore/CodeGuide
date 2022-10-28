@@ -125,10 +125,10 @@ Container t7EditTextStyle(var hintText) {
         hintText: hintText,
         hintStyle: primaryTextStyle(),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+          borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: appStore.textPrimaryColor!, width: 0.0),
+          borderSide: BorderSide(color: appStore.textPrimaryColor, width: 0.0),
         ),
       ),
     ),

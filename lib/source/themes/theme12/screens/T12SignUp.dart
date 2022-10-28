@@ -30,7 +30,7 @@ class T12SignUpState extends State<T12SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       body: SafeArea(

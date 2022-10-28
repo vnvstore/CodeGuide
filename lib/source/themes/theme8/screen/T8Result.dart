@@ -23,7 +23,7 @@ class T8Result extends StatefulWidget {
 class T8ResultState extends State<T8Result> {
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       body: SafeArea(

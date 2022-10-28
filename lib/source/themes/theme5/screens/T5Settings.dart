@@ -59,7 +59,7 @@ class T5SettingsState extends State<T5Settings> {
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,

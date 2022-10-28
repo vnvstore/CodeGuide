@@ -70,7 +70,7 @@ class T5SearchState extends State<T5Search> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
 
     return Scaffold(
       body: Container(

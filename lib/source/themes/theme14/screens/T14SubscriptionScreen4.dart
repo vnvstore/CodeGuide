@@ -76,7 +76,7 @@ class _T14SubscriptionScreen4State extends State<T14SubscriptionScreen4> {
                                   color: data.checkBox! ? t14_btn_checkBoxColor : Colors.transparent,
                                   border: Border.all(
                                     width: 1,
-                                    color: data.checkBox! ? Colors.transparent : appStore.textPrimaryColor!,
+                                    color: data.checkBox! ? Colors.transparent : appStore.textPrimaryColor,
                                   ),
                                   shape: BoxShape.circle),
                               child: Theme(

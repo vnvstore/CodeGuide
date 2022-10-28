@@ -31,7 +31,7 @@ class T13SearchScreenState extends State<T13SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return SafeArea(
       child: Scaffold(
         backgroundColor: context.scaffoldBackgroundColor,

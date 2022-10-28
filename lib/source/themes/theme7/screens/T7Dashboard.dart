@@ -50,7 +50,7 @@ class T7DashboardState extends State<T7Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       bottomNavigationBar: Container(

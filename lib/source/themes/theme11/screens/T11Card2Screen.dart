@@ -16,7 +16,7 @@ class T11Card2Screen extends StatefulWidget {
 class T11Card2ScreenState extends State<T11Card2Screen> {
   @override
   void initState() {
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor, statusBarIconBrightness: Brightness.dark);
     super.initState();
   }
 

@@ -3,8 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:codeguide/main/utils/AppConstant.dart';
+
 import '../../utils/AppWidget.dart';
+import '../../utils/AppConstant.dart';
 import 'package:codeguide/main/utils/dots_indicator/dots_indicator.dart';
 import 'package:codeguide/themes/theme5/utils/T5Colors.dart';
 import 'package:codeguide/themes/theme5/utils/T5Images.dart';
@@ -31,7 +32,7 @@ class T5WalkThroughState extends State<T5WalkThrough> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(appStore.appBarColor!);
+    changeStatusColor(appStore.appBarColor);
     return Scaffold(
         body: Stack(
       children: <Widget>[
