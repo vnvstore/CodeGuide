@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';  //https://pub.dev/packages/fl_chart
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';  //https://pub.dev/packages/nb_utils
 
@@ -60,7 +59,7 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
                 width: 300,
                 child: BarChart(
                   isPlaying ? randomData() : mainBarData(),
-                  swapAnimationDuration: animDuration,
+                  duration: animDuration,
                 ),
               ),
               12.height,
@@ -100,13 +99,13 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
       x: x,
       barRods: [
         BarChartRodData(
-          y: isTouched ? y + 1 : y,
-          colors: isTouched ? [yellow] : [barColor],
+          toY: isTouched ? y + 1 : y,
+          color: isTouched ? yellow : barColor,
           width: width,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
-            y: 20,
-            colors: [barBackgroundColor],
+            toY: 20,
+            color: barBackgroundColor,
           ),
         ),
       ],
@@ -144,7 +143,7 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
     return BarChartData(
       barTouchData: BarTouchData(
         touchTooltipData: BarTouchTooltipData(
-            tooltipBgColor: grey,
+            getTooltipColor: (group) => grey,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
               String weekDay;
               switch (group.x.toInt()) {
@@ -177,7 +176,7 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
                 boldTextStyle(),
                 children: <TextSpan>[
                   TextSpan(
-                    text: (rod.y - 1).toString(),
+                    text: (rod.toY - 1).toString(),
                     style: TextStyle(
                       color: yellow,
                       fontSize: 16,
@@ -187,9 +186,9 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
                 ],
               );
             }),
-        touchCallback: (barTouchResponse) {
+        touchCallback: (FlTouchEvent event, barTouchResponse) {
           setState(() {
-            if (barTouchResponse.spot != null && barTouchResponse.touchInput is! PointerUpEvent && barTouchResponse.touchInput is! PointerExitEvent) {
+            if (barTouchResponse != null && barTouchResponse.spot != null && event is! FlTapUpEvent && event is! FlPanEndEvent) {
               touchedIndex = barTouchResponse.spot!.touchedBarGroupIndex;
             } else {
               touchedIndex = -1;
@@ -199,33 +198,48 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
       ),
       titlesData: FlTitlesData(
         show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: transactionRight),
-          margin: 16,
-          getTitles: (double value) {
-            switch (value.toInt()) {
-              case 0:
-                return 'M';
-              case 1:
-                return 'T';
-              case 2:
-                return 'W';
-              case 3:
-                return 'T';
-              case 4:
-                return 'F';
-              case 5:
-                return 'S';
-              case 6:
-                return 'S';
-              default:
-                return '';
-            }
-          },
-        ),
-        leftTitles: SideTitles(
-          showTitles: false,
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 32,
+            getTitlesWidget: (double value, TitleMeta meta) {
+              String text;
+              switch (value.toInt()) {
+                case 0:
+                  text = 'M';
+                  break;
+                case 1:
+                  text = 'T';
+                  break;
+                case 2:
+                  text = 'W';
+                  break;
+                case 3:
+                  text = 'T';
+                  break;
+                case 4:
+                  text = 'F';
+                  break;
+                case 5:
+                  text = 'S';
+                  break;
+                case 6:
+                  text = 'S';
+                  break;
+                default:
+                  text = '';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                space: 16,
+                child: Text(text, style: boldTextStyle(color: transactionRight)),
+              );
+            },
+          ),
         ),
       ),
       borderData: FlBorderData(
@@ -242,33 +256,48 @@ class DemoBarChart1ScreenState extends State<DemoBarChart1Screen> {
       ),
       titlesData: FlTitlesData(
         show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: transactionRight),
-          margin: 16,
-          getTitles: (double value) {
-            switch (value.toInt()) {
-              case 0:
-                return 'M';
-              case 1:
-                return 'T';
-              case 2:
-                return 'W';
-              case 3:
-                return 'T';
-              case 4:
-                return 'F';
-              case 5:
-                return 'S';
-              case 6:
-                return 'S';
-              default:
-                return '';
-            }
-          },
-        ),
-        leftTitles: SideTitles(
-          showTitles: false,
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 32,
+            getTitlesWidget: (double value, TitleMeta meta) {
+              String text;
+              switch (value.toInt()) {
+                case 0:
+                  text = 'M';
+                  break;
+                case 1:
+                  text = 'T';
+                  break;
+                case 2:
+                  text = 'W';
+                  break;
+                case 3:
+                  text = 'T';
+                  break;
+                case 4:
+                  text = 'F';
+                  break;
+                case 5:
+                  text = 'S';
+                  break;
+                case 6:
+                  text = 'S';
+                  break;
+                default:
+                  text = '';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                space: 16,
+                child: Text(text, style: boldTextStyle(color: transactionRight)),
+              );
+            },
+          ),
         ),
       ),
       borderData: FlBorderData(

@@ -90,12 +90,11 @@ class _T14ProfileScreen3State extends State<T14ProfileScreen3> {
                 ),
               ],
             ).paddingAll(16),
-            StaggeredGridView.countBuilder(
-              crossAxisCount: 4,
+            MasonryGridView.count(
+              crossAxisCount: 2,
               physics: NeverScrollableScrollPhysics(),
               itemCount: topTravelList.length,
               shrinkWrap: true,
-              staggeredTileBuilder: (int index) => new StaggeredTile.count(2, index.isEven ? 3 : 2),
               mainAxisSpacing: 16.0,
               crossAxisSpacing: 16.0,
               itemBuilder: (BuildContext context, int index) => ClipRRect(

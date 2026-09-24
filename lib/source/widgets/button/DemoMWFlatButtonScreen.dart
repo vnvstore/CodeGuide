@@ -152,7 +152,6 @@ class DemoMWFlatButtonScreenState extends State<DemoMWFlatButtonScreen> {
                 },
                 style: TextButton.styleFrom(
                   backgroundColor:Color(0xFF8998FF),
-                  primary: Color(0xFF8998FF),
                 ),
                 child: Text(
                   "Color Fill Flat button",
@@ -166,7 +165,6 @@ class DemoMWFlatButtonScreenState extends State<DemoMWFlatButtonScreen> {
                 },
                 style: TextButton.styleFrom(
                   backgroundColor:Color(0xFFf2866c),
-                    primary: Color(0xFFf2866c),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                 ),
                 child: Text(
@@ -187,7 +185,7 @@ class DemoMWFlatButtonScreenState extends State<DemoMWFlatButtonScreen> {
                     print( 'Gradient Flat button');
                   },
                   style: TextButton.styleFrom(
-                    primary: Colors.transparent
+                    backgroundColor: Colors.transparent
                   ),
                   //splashColor: Colors.transparent,
                   child: Text(

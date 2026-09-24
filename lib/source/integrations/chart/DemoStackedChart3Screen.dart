@@ -37,7 +37,7 @@ class DemoStackedChart3ScreenState extends State<DemoStackedChart3Screen> {
         child: SfCartesianChart(
           zoomPanBehavior: ZoomPanBehavior(enablePinching: true,enableDoubleTapZooming: true,enablePanning: true),
           tooltipBehavior: tooltipBehavior,
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             StackedBarSeries<ExpenseData, String>(
               name: 'Father',
               markerSettings: MarkerSettings(isVisible: true),

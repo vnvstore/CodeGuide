@@ -262,7 +262,7 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 20.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField({this.lastPin, this.fields = 4, this.onSubmit, this.fieldWidth = 40.0, this.fontSize = 20.0, this.isTextObscure = false, this.showFieldAsBox = false}) : assert(fields > 0);
 
   @override
   State createState() {
@@ -283,7 +283,7 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
     _pin = List<String?>.filled(widget.fields, null, growable: false);
     _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: false);
     _textControllers = List<TextEditingController?>.filled(widget.fields, null, growable: false);
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
         if (widget.lastPin != null) {
           for (var i = 0; i < widget.lastPin!.length; i++) {

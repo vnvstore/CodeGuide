@@ -41,7 +41,7 @@ class T13WalkThroughScreenState extends State<T13WalkThroughScreen> {
                 alignment: Alignment.center,
                 child: DotsIndicator(
                   dotsCount: 3,
-                  position: currentIndexPage.toDouble(),
+                  position: currentIndexPage,
                   decorator: DotsDecorator(
                     size: Size.square(6.0),
                     activeSize: Size.square(10.0),

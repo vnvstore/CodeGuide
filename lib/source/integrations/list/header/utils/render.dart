@@ -27,7 +27,7 @@ class RenderStickyHeader extends RenderBox with ContainerRenderObjectMixin<Rende
   RenderStickyHeader({
     required ScrollPosition scrollPosition,
     RenderStickyHeaderCallback? callback,
-    bool overlapHeaders: false,
+    bool overlapHeaders = false,
     RenderBox? header,
     RenderBox? content,
   })  : _scrollPosition = scrollPosition,

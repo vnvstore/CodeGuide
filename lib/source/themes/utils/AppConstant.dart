@@ -45,35 +45,6 @@ const PlayStoreUrl = 'https://play.google.com/store/apps/details?id=';
 const DocumentationUrl = 'https://wordpress.iqonic.design/docs/product/prokit-flutter/';
 const ChangeLogsUrl = 'https://wordpress.iqonic.design/docs/product/prokit-flutter/updates/change-logs/';
 
-/* Testing
-Ad format	Sample ad unit ID
-App Open	ca-app-pub-3940256099942544/3419835294
-Banner	ca-app-pub-3940256099942544/6300978111
-Interstitial	ca-app-pub-3940256099942544/1033173712
-Interstitial Video	ca-app-pub-3940256099942544/8691691433
-Rewarded	ca-app-pub-3940256099942544/5224354917
-Rewarded Interstitial	ca-app-pub-3940256099942544/5354046379
-Native Advanced	ca-app-pub-3940256099942544/2247696110
-Native Advanced Video	ca-app-pub-3940256099942544/1044960115
-*/
-
-//test ad
-
-const bannerAdIdForAndroidRelease = "ca-app-pub-3940256099942544/6300978111";
-const bannerAdIdForAndroid = "ca-app-pub-3940256099942544/6300978111";
-const InterstitialAdIdForAndroidRelease = "ca-app-pub-3940256099942544/1033173712";
-const InterstitialAdIdForAndroid = "ca-app-pub-3940256099942544/1033173712";
-
-/*
-const bannerAdIdForAndroidRelease = "ca-app-pub-9217225679299891/7786794982";
-const bannerAdIdForAndroid = "ca-app-pub-9217225679299891/7786794982";
-const InterstitialAdIdForAndroidRelease = "ca-app-pub-9217225679299891/9838243250";
-const InterstitialAdIdForAndroid = "ca-app-pub-9217225679299891/9838243250";
-*/
-
-const bannerAdIdForIos = "ca-app-pub-3940256099942544/2934735716";
-const interstitialAdIdForIos = "ca-app-pub-3940256099942544/4411468910";
-
 const SampleImageUrl = '$BaseUrl/images/defaultTheme/slider/01.jpg';
 const SampleImageUrl2 = '$BaseUrl/images/defaultTheme/slider/04.jpg';
 const SampleImageUrl3 = '$BaseUrl/images/defaultTheme/slider/03.jpg';

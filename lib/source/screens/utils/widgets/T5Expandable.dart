@@ -203,7 +203,7 @@ class ExpandableThemeData {
         this.collapseIcon != null;
   }
 
-  bool operator ==(dynamic o) {
+  bool operator ==(Object o) {
     if (identical(this, o)) {
       return true;
     } else if (o is ExpandableThemeData) {
@@ -519,6 +519,8 @@ class T5ExpandablePanel extends StatelessWidget {
             return CrossAxisAlignment.center;
           case ExpandablePanelHeaderAlignment.bottom:
             return CrossAxisAlignment.end;
+          default:
+            return CrossAxisAlignment.start;
         }
         assert(false);
         return null;

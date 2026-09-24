@@ -56,7 +56,7 @@ class DemoFilePickerScreenState extends State<DemoFilePickerScreen> {
           ).paddingAll(16),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: appColorPrimary,
+              backgroundColor: appColorPrimary,
             ),
             onPressed: () async {
               await getFiles();

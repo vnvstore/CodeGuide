@@ -198,7 +198,7 @@ class FabCircularMenuState extends State<FabCircularMenu> with SingleTickerProvi
   }
 
   void _calculateProps() {
-    _ringColor = widget.ringColor ?? Theme.of(context).accentColor;
+    _ringColor = widget.ringColor ?? Theme.of(context).colorScheme.secondary;
     _fabColor = widget.fabColor ?? Theme.of(context).primaryColor;
     _fabOpenColor = widget.fabOpenColor ?? _fabColor;
     _fabCloseColor = widget.fabCloseColor ?? _fabColor;

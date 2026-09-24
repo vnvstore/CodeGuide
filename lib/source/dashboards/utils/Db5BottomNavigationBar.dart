@@ -590,7 +590,7 @@ class _Db5BottomNavigationBarState extends State<Db5BottomNavigationBar> with Ti
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 
@@ -598,7 +598,7 @@ class _Db5BottomNavigationBarState extends State<Db5BottomNavigationBar> with Ti
     switch (widget.type) {
       case Db5BottomNavigationBarType.fixed:
         colorTween = ColorTween(
-          begin: widget.unselectedItemColor ?? themeData.textTheme.caption!.color,
+          begin: widget.unselectedItemColor ?? themeData.textTheme.bodySmall!.color,
           end: widget.selectedItemColor ?? widget.fixedColor ?? themeColor,
         );
         break;

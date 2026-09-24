@@ -32,7 +32,7 @@ class CircleColor {
   final Color end;
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (other.runtimeType != runtimeType) {
       return false;
     }
@@ -40,7 +40,7 @@ class CircleColor {
   }
 
   @override
-  int get hashCode => hashValues(start, end);
+  int get hashCode => Object.hash(start, end);
 }
 
 class OvershootCurve extends Curve {

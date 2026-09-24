@@ -201,7 +201,7 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
   void didChangeDependencies() {
     final ThemeData theme = Theme.of(context);
     _valueColor = _positionController!.drive(
-      ColorTween(begin: (widget.color ?? theme.accentColor).withOpacity(0.0), end: (widget.color ?? theme.accentColor).withOpacity(1.0))
+      ColorTween(begin: (widget.color ?? theme.colorScheme.secondary).withOpacity(0.0), end: (widget.color ?? theme.colorScheme.secondary).withOpacity(1.0))
           .chain(CurveTween(curve: const Interval(0.0, 1.0 / _kDragSizeFactorLimit))),
     );
     super.didChangeDependencies();
@@ -281,7 +281,7 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
   bool _handleGlowNotification(OverscrollIndicatorNotification notification) {
     if (notification.depth != 0 || !notification.leading) return false;
     if (_mode == _LiquidPullToRefreshMode.drag) {
-      notification.disallowGlow();
+      notification.disallowIndicator();
       return true;
     }
     return false;
@@ -467,7 +467,7 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
     assert(debugCheckHasMaterialLocalizations(context));
 
     // assigning default color and background color
-    Color _defaultColor = Theme.of(context).accentColor;
+    Color _defaultColor = Theme.of(context).colorScheme.secondary;
     Color _defaultBackgroundColor = Theme.of(context).canvasColor;
 
     // assigning default height

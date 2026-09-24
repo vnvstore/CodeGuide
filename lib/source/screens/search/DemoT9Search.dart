@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -47,7 +46,7 @@ class DemoT9SearchState extends State<DemoT9Search> {
                 children: <Widget>[
                   RichText(
                     text: TextSpan(
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                       children: [
                         WidgetSpan(
                           child: Padding(
@@ -65,7 +64,7 @@ class DemoT9SearchState extends State<DemoT9Search> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       children: [
                         TextSpan(text: t9_lbl_filter, style: TextStyle(fontSize: textSizeMedium, color: t9_colorPrimary)),
                         WidgetSpan(

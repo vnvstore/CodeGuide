@@ -62,12 +62,11 @@ class DemoDashboard5BestDestinationState extends State<DemoDashboard5BestDestina
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     margin: EdgeInsets.only(left: 16, right: 16),
-                    child: StaggeredGridView.countBuilder(
-                      crossAxisCount: 4,
+                    child: MasonryGridView.count(
+                      crossAxisCount: 2,
                       primary: false,
                       mainAxisSpacing: 16.0,
                       crossAxisSpacing: 16.0,
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
                       itemCount: mListings1.length,
                       physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) => Container(
@@ -91,7 +90,7 @@ class DemoDashboard5BestDestinationState extends State<DemoDashboard5BestDestina
                                           padding: EdgeInsets.fromLTRB(10, 4, 10, 4),
                                           child: RichText(
                                             text: TextSpan(
-                                              style: Theme.of(context).textTheme.bodyText2,
+                                              style: Theme.of(context).textTheme.bodyMedium,
                                               children: [
                                                 WidgetSpan(
                                                   child: Padding(

@@ -62,7 +62,7 @@ class DemoMonthlySale1ScreenState extends State<DemoMonthlySale1Screen> {
               width: 300,
               child: LineChart(
                 sampleData2(),
-                swapAnimationDuration: Duration(milliseconds: 250),
+                duration: Duration(milliseconds: 250),
               ),
             ).center(),
           ],
@@ -80,39 +80,59 @@ class DemoMonthlySale1ScreenState extends State<DemoMonthlySale1Screen> {
         show: false,
       ),
       titlesData: FlTitlesData(
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: borderText),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 2:
-                return 'SEPT';
-              case 7:
-                return 'OCT';
-              case 12:
-                return 'DEC';
-            }
-            return '';
-          },
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: (value, meta) {
+              String text = '';
+              switch (value.toInt()) {
+                case 2:
+                  text = 'SEPT';
+                  break;
+                case 7:
+                  text = 'OCT';
+                  break;
+                case 12:
+                  text = 'DEC';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                child: Text(text, style: boldTextStyle(color: borderText)),
+              );
+            },
+          ),
         ),
-        leftTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: borderText),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 1:
-                return '1m';
-              case 2:
-                return '2m';
-              case 3:
-                return '3m';
-              case 4:
-                return '5m';
-              case 5:
-                return '6m';
-            }
-            return '';
-          },
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: (value, meta) {
+              String text = '';
+              switch (value.toInt()) {
+                case 1:
+                  text = '1m';
+                  break;
+                case 2:
+                  text = '2m';
+                  break;
+                case 3:
+                  text = '3m';
+                  break;
+                case 4:
+                  text = '5m';
+                  break;
+                case 5:
+                  text = '6m';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                child: Text(text, style: boldTextStyle(color: borderText)),
+              );
+            },
+          ),
         ),
       ),
       borderData: FlBorderData(
@@ -154,7 +174,7 @@ class DemoMonthlySale1ScreenState extends State<DemoMonthlySale1Screen> {
         ],
         isCurved: true,
         curveSmoothness: 0,
-        colors: [darkOliveGreen],
+        color: darkOliveGreen,
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(
@@ -174,17 +194,13 @@ class DemoMonthlySale1ScreenState extends State<DemoMonthlySale1Screen> {
           FlSpot(13, 3.9),
         ],
         isCurved: true,
-        colors: [
-          Color(0x99aa4cfc),
-        ],
+        color: Color(0x99aa4cfc),
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(
           show: false,
         ),
-        belowBarData: BarAreaData(show: true, colors: [
-          Color(0x33aa4cfc),
-        ]),
+        belowBarData: BarAreaData(show: true, color: Color(0x33aa4cfc)),
       ),
       LineChartBarData(
         spots: [
@@ -196,7 +212,7 @@ class DemoMonthlySale1ScreenState extends State<DemoMonthlySale1Screen> {
         ],
         isCurved: true,
         curveSmoothness: 0,
-        colors: [mediumBlue],
+        color: mediumBlue,
         barWidth: 2,
         isStrokeCapRound: true,
         dotData: FlDotData(show: true),

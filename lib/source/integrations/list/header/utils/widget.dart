@@ -33,7 +33,7 @@ class StickyHeader extends MultiChildRenderObjectWidget {
     Key? key,
     required this.header,
     required this.content,
-    this.overlapHeaders: false,
+    this.overlapHeaders = false,
     this.controller,
     this.callback,
   }) : super(
@@ -60,7 +60,7 @@ class StickyHeader extends MultiChildRenderObjectWidget {
 
   @override
   RenderStickyHeader createRenderObject(BuildContext context) {
-    final scrollPosition = this.controller?.position ?? Scrollable.of(context)!.position;
+    final scrollPosition = this.controller?.position ?? Scrollable.of(context).position;
     return RenderStickyHeader(
       scrollPosition: scrollPosition,
       callback: this.callback,
@@ -70,7 +70,7 @@ class StickyHeader extends MultiChildRenderObjectWidget {
 
   @override
   void updateRenderObject(BuildContext context, RenderStickyHeader renderObject) {
-    final scrollPosition = this.controller?.position ?? Scrollable.of(context)!.position;
+    final scrollPosition = this.controller?.position ?? Scrollable.of(context).position;
     renderObject
       ..scrollPosition = scrollPosition
       ..callback = this.callback
@@ -91,7 +91,7 @@ class StickyHeaderBuilder extends StatefulWidget {
     Key? key,
     required this.builder,
     this.content,
-    this.overlapHeaders: false,
+    this.overlapHeaders = false,
     this.controller,
   }) : super(key: key);
 

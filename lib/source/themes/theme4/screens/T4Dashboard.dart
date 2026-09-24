@@ -137,14 +137,13 @@ class T4DashboardState extends State<T4Dashboard> {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 16, right: 16),
-                        child: StaggeredGridView.countBuilder(
-                          crossAxisCount: 4,
+                        child: MasonryGridView.count(
+                          crossAxisCount: 2,
                           primary: false,
                           padding: EdgeInsets.only(bottom: 30),
                           mainAxisSpacing: 4.0,
                           crossAxisSpacing: 4.0,
                           shrinkWrap: true,
-                          staggeredTileBuilder: (index) => new StaggeredTile.fit(2),
                           itemCount: mListings.length,
                           physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) => Container(

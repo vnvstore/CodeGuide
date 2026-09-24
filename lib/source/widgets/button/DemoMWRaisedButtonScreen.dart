@@ -37,7 +37,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                 onPressed: () {
                   print( 'Default Raised button');
                 },
-                style: ElevatedButton.styleFrom(primary: Color(0xFFDFDFDF)),
+                style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFDFDFDF)),
                 child: Text(
                   'Default Raised button',
                   style: TextStyle(fontSize: 16,color: Colors.black),
@@ -45,7 +45,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
               ),
               Divider(),
               ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(primary:  Color(0xFFDFDFDF)),
+                style: ElevatedButton.styleFrom(backgroundColor:  Color(0xFFDFDFDF)),
                 onPressed: () {
                   print( 'Raised button with icon');
                 },
@@ -60,7 +60,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
               ),
               Divider(),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(primary:  Color(0xFF9C9C9C)),
+                style: ElevatedButton.styleFrom(backgroundColor:  Color(0xFF9C9C9C)),
                 onPressed: () {},
                 child: Text(
                   'Disable Raised button',
@@ -69,7 +69,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
               ),
               Divider(),
               ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(primary: Color(0xFF9C9C9C)),
+                style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF9C9C9C)),
                   onPressed: () {},
                   icon: Icon(
                     Icons.add,
@@ -89,7 +89,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   print( 'Border Raised button');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFFDFDFDF),
+                  backgroundColor: Color(0xFFDFDFDF),
                   shape: RoundedRectangleBorder(
                     side: BorderSide(color: Colors.black),
                   ),
@@ -101,7 +101,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   print( 'Rounded Raised button');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFFDFDFDF),
+                  backgroundColor: Color(0xFFDFDFDF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                     side: BorderSide(
@@ -120,7 +120,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   print( 'Customize Rounded Raised button');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFFDFDFDF),
+                  backgroundColor: Color(0xFFDFDFDF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                     side: BorderSide(
@@ -147,7 +147,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFFDFDFDF),
+                  backgroundColor: Color(0xFFDFDFDF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                     side: BorderSide(
@@ -162,7 +162,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   print( 'Color Fill Raised button');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xff8998FF),
+                  backgroundColor: Color(0xff8998FF),
                 ),
                 child: Text(
                   "Color Fill Raised button",
@@ -175,7 +175,7 @@ class DemoMWRaisedButtonScreenState extends State<DemoMWRaisedButtonScreen> {
                   print( 'Rounded color fill Raised button');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xfff2866c),
+                  backgroundColor: Color(0xfff2866c),
                   textStyle: TextStyle(color: Color(0xfff2866c)),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),

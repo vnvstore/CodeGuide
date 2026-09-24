@@ -608,7 +608,7 @@ class _T9BottomNavigationBarState extends State<T9BottomNavigationBar> with Tick
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 
@@ -616,7 +616,7 @@ class _T9BottomNavigationBarState extends State<T9BottomNavigationBar> with Tick
     switch (widget.type) {
       case T9BottomNavigationBarType.fixed:
         colorTween = ColorTween(
-          begin: widget.unselectedItemColor ?? themeData.textTheme.caption!.color,
+          begin: widget.unselectedItemColor ?? themeData.textTheme.bodySmall!.color,
           end: widget.selectedItemColor ?? widget.fixedColor ?? themeColor,
         );
         break;

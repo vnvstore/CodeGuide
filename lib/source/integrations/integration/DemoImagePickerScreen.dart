@@ -13,7 +13,7 @@ class DemoImagePickerScreen extends StatefulWidget {
 
 class DemoImagePickerScreenState extends State<DemoImagePickerScreen> {
   Color appColorPrimary = Color(0xFF1157FA);
-  PickedFile? pickImage;
+  XFile? pickImage;
   String fileName = '', filePath = '';
 
   @override
@@ -27,7 +27,7 @@ class DemoImagePickerScreenState extends State<DemoImagePickerScreen> {
   }
 
   Future getImage() async {
-    pickImage = await ImagePicker().getImage(source: ImageSource.gallery);
+    pickImage = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickImage != null) {
       fileName = pickImage!.path.split('/').last;
       filePath = pickImage!.path;
@@ -64,7 +64,7 @@ class DemoImagePickerScreenState extends State<DemoImagePickerScreen> {
                 ).center(),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: appColorPrimary,
+                  backgroundColor: appColorPrimary,
                 ),
                 onPressed: () async {
                   await getImage();

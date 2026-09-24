@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 import 'T6Colors.dart';
@@ -13,10 +13,10 @@ class Bar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlayAnimation(
+    return PlayAnimationBuilder<double>(
       duration: Duration(milliseconds: (height * _baseDurationMs).round()),
       tween: Tween(begin: 0.0, end: height),
-      builder: (context, child, dynamic animatedHeight) {
+      builder: (context, animatedHeight, child) {
         return Column(
           children: <Widget>[
             Container(

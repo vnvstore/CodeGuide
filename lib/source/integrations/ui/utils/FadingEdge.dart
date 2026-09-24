@@ -107,7 +107,7 @@ class FadingEdgeScrollView extends StatefulWidget {
     return FadingEdgeScrollView._internal(
       key: key,
       child: child,
-      scrollController: child.controller,
+      scrollController: child.controller!,
       scrollDirection: child.scrollDirection,
       reverse: child.reverse,
       gradientFractionOnStart: gradientFractionOnStart,
@@ -156,7 +156,7 @@ class _FadingEdgeScrollViewState extends State<FadingEdgeScrollView> with Widget
     _isScrolledToStart = _controller!.initialScrollOffset == 0;
     _controller!.addListener(_onScroll);
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_controller == null) {
         return;
       }
@@ -167,12 +167,12 @@ class _FadingEdgeScrollViewState extends State<FadingEdgeScrollView> with Widget
         });
       }
     });
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
     _controller!.removeListener(_onScroll);
     if (widget.shouldDisposeScrollController) {
