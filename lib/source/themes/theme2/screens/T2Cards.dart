@@ -46,57 +46,51 @@ class T2CardsState extends State<T2Cards> {
                 itemBuilder: (context, index) {
                   return Slidable(
                     key: ValueKey(index),
-                    actionPane: SlidableDrawerActionPane(),
-                    actions: <Widget>[
-                      Container(
-                        child: Stack(
-                          children: <Widget>[
-                            IconSlideAction(
-                              caption: '',
-                              color: Colors.transparent,
-                              icon: Icons.edit,
-                              closeOnTap: true,
-                              foregroundColor: Colors.transparent,
-                              onTap: () {},
+                    startActionPane: ActionPane(
+                      motion: DrawerMotion(),
+                      children: [
+                        CustomSlidableAction(
+                          onPressed: (context) {},
+                          backgroundColor: Colors.transparent,
+                          child: Container(
+                            child: Stack(
+                              children: <Widget>[
+                                RotatedBox(
+                                  quarterTurns: -1,
+                                  child: Text("Edit", style: boldTextStyle(color: white, letterSpacing: 5.0)).center(),
+                                )
+                              ],
+                              alignment: Alignment.center,
                             ),
-                            RotatedBox(
-                              quarterTurns: -1,
-                              child: Text("Edit", style: boldTextStyle(color: white, letterSpacing: 5.0)).center(),
-                            )
-                          ],
-                          alignment: Alignment.center,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: t2_green),
+                            margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                            alignment: Alignment.center,
+                          ),
                         ),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: t2_green),
-                        margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                        alignment: Alignment.center,
-                      )
-                    ],
-                    secondaryActions: <Widget>[
-                      Container(
-                        child: Stack(
-                          children: <Widget>[
-                            IconSlideAction(
-                              caption: '',
-                              color: Colors.transparent,
-                              icon: Icons.edit,
-                              closeOnTap: true,
-                              foregroundColor: Colors.transparent,
-                              onTap: () {},
+                      ],
+                    ),
+                    endActionPane: ActionPane(
+                      motion: DrawerMotion(),
+                      children: [
+                        CustomSlidableAction(
+                          onPressed: (context) {},
+                          backgroundColor: Colors.transparent,
+                          child: Container(
+                            child: Stack(
+                              children: <Widget>[
+                                RotatedBox(
+                                  quarterTurns: -1,
+                                  child: Text("Remove", style: boldTextStyle(color: white, letterSpacing: 5.0)).center(),
+                                )
+                              ],
+                              alignment: Alignment.center,
                             ),
-                            RotatedBox(
-                              quarterTurns: -1,
-                              child: Text("Remove", style: boldTextStyle(color: white, letterSpacing: 5.0)).center(),
-                            )
-                          ],
-                          alignment: Alignment.center,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: t2_red),
+                            margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                            alignment: Alignment.center,
+                          ),
                         ),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: t2_red),
-                        margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                        alignment: Alignment.center,
-                      ),
-                    ],
-                    dismissal: SlidableDismissal(
-                      child: SlidableDrawerDismissal(),
+                      ],
                     ),
                     child: Container(
                       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),

@@ -53,7 +53,7 @@ class DemoAMAnimatedPositionedScreenState extends State<DemoAMAnimatedPositioned
                 child: Row(
                   children: [
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
                         setState(() {
                           mLeftPosition = 0;
@@ -69,7 +69,7 @@ class DemoAMAnimatedPositionedScreenState extends State<DemoAMAnimatedPositioned
                     ),
                     10.width,
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
                         setState(() {
                           mLeftPosition = 120;
@@ -82,7 +82,7 @@ class DemoAMAnimatedPositionedScreenState extends State<DemoAMAnimatedPositioned
                     ),
                     10.width,
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
                         setState(() {
                           mLeftPosition = 0;
@@ -95,7 +95,7 @@ class DemoAMAnimatedPositionedScreenState extends State<DemoAMAnimatedPositioned
                     ),
                     10.width,
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.blue),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
                         setState(() {
                           mLeftPosition = 0;

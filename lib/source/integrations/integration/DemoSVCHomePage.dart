@@ -118,8 +118,8 @@ class _DemoSVCHomePageState extends State<DemoSVCHomePage> {
   void initState() {
     super.initState();
     //  Start showcase view after current widget frames are drawn.
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      Future.delayed(Duration(milliseconds: 200), () => ShowCaseWidget.of(myContext)!.startShowCase([_one, _two, _three]));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(Duration(milliseconds: 200), () => ShowCaseWidget.of(myContext).startShowCase([_one, _two, _three]));
     });
   }
 
@@ -127,8 +127,7 @@ class _DemoSVCHomePageState extends State<DemoSVCHomePage> {
   Widget build(BuildContext context) {
     // keep all your content in Show Case Widget.
     return ShowCaseWidget(
-      builder: Builder(
-        builder: (context) {
+      builder: (context) {
           myContext = context;
           return Scaffold(
             body: Container(
@@ -454,19 +453,18 @@ class _DemoSVCHomePageState extends State<DemoSVCHomePage> {
                                       ),
                                     )
                                   ],
-                                ),
-                              );
-                            }),
-                      )
-                    ],
+                                ));
+                             },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          );
-        },
-      ),
-    );
+            );
+          },
+        );
   }
 }
 

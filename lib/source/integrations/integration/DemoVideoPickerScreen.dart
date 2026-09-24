@@ -14,7 +14,7 @@ class DemoVideoPickerScreen extends StatefulWidget {
 class DemoVideoPickerScreenState extends State<DemoVideoPickerScreen> {
   Color appColorPrimary = Color(0xFF1157FA);
 
-  PickedFile? pickVideo;
+  XFile? pickVideo;
   String videoName = '', videoPath = '';
   VideoPlayerController? _controller;
   bool isVideoPlay = false;
@@ -30,7 +30,7 @@ class DemoVideoPickerScreenState extends State<DemoVideoPickerScreen> {
   }
 
   Future getVideo() async {
-    pickVideo = await ImagePicker().getVideo(source: ImageSource.gallery);
+    pickVideo = await ImagePicker().pickVideo(source: ImageSource.gallery);
 
     if (pickVideo != null) {
       videoName = pickVideo!.path.split('/').last;
@@ -90,7 +90,7 @@ class DemoVideoPickerScreenState extends State<DemoVideoPickerScreen> {
                 ).center(),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: appColorPrimary,
+                  backgroundColor: appColorPrimary,
                 ),
                 onPressed: () async {
                   await getVideo();

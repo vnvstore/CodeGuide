@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -127,7 +126,7 @@ class DemoT9DescriptionState extends State<DemoT9Description> {
                       ),
                       RichText(
                         text: TextSpan(
-                          style: Theme.of(context).textTheme.bodyText2,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           children: [
                             WidgetSpan(
                               child: Padding(

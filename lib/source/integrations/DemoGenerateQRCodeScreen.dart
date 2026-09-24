@@ -58,11 +58,11 @@ class DemoGenerateQRCodeScreenState extends State<DemoGenerateQRCodeScreen> {
               },
             ),
             16.height,
-            QrImage(
+            QrImageView(
               data: qrCont.text.validate(),
               version: QrVersions.auto,
               size: 220.0,
-              foregroundColor: Colors.black,
+              backgroundColor: Colors.transparent,
             ).visible(qrCont.text.isNotEmpty),
           ],
         ).paddingAll(16),

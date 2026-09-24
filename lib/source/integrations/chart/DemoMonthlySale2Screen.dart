@@ -50,7 +50,7 @@ class DemoMonthlySale2ScreenState extends State<DemoMonthlySale2Screen> {
         width: context.width() * 0.8,
         child: LineChart(
           sampleData1(),
-          swapAnimationDuration: Duration(milliseconds: 250),
+          duration: Duration(milliseconds: 250),
         ),
       ).center(),
     );
@@ -60,48 +60,67 @@ class DemoMonthlySale2ScreenState extends State<DemoMonthlySale2Screen> {
     return LineChartData(
       lineTouchData: LineTouchData(
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+          getTooltipColor: (touchedSpot) => Colors.blueGrey.withValues(alpha: 0.8),
         ),
-        touchCallback: (LineTouchResponse touchResponse) {},
+        touchCallback: (FlTouchEvent event, LineTouchResponse? touchResponse) {},
         handleBuiltInTouches: true,
       ),
       gridData: FlGridData(
         show: false,
       ),
       titlesData: FlTitlesData(
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: TransactionRight),
-          margin: 10,
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 2:
-                return 'SEPT';
-              case 7:
-                return 'OCT';
-              case 12:
-                return 'DEC';
-            }
-            return '';
-          },
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: (value, meta) {
+              String text = '';
+              switch (value.toInt()) {
+                case 2:
+                  text = 'SEPT';
+                  break;
+                case 7:
+                  text = 'OCT';
+                  break;
+                case 12:
+                  text = 'DEC';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                space: 10,
+                child: Text(text, style: boldTextStyle(color: TransactionRight)),
+              );
+            },
+          ),
         ),
-        leftTitles: SideTitles(
-          margin: 10,
-          showTitles: true,
-          getTextStyles: (context) => boldTextStyle(color: TransactionRight),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 1:
-                return '1m';
-              case 2:
-                return '2m';
-              case 3:
-                return '3m';
-              case 4:
-                return '5m';
-            }
-            return '';
-          },
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: (value, meta) {
+              String text = '';
+              switch (value.toInt()) {
+                case 1:
+                  text = '1m';
+                  break;
+                case 2:
+                  text = '2m';
+                  break;
+                case 3:
+                  text = '3m';
+                  break;
+                case 4:
+                  text = '5m';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                space: 10,
+                child: Text(text, style: boldTextStyle(color: TransactionRight)),
+              );
+            },
+          ),
         ),
       ),
       borderData: FlBorderData(
@@ -143,7 +162,7 @@ class DemoMonthlySale2ScreenState extends State<DemoMonthlySale2Screen> {
         FlSpot(13, 1.8),
       ],
       isCurved: true,
-      colors: [aquamarine],
+      color: aquamarine,
       barWidth: 8,
       isStrokeCapRound: true,
       dotData: FlDotData(
@@ -163,7 +182,7 @@ class DemoMonthlySale2ScreenState extends State<DemoMonthlySale2Screen> {
         FlSpot(13, 3.9),
       ],
       isCurved: true,
-      colors: [darkOrchid],
+      color: darkOrchid,
       barWidth: 8,
       isStrokeCapRound: true,
       dotData: FlDotData(
@@ -179,7 +198,7 @@ class DemoMonthlySale2ScreenState extends State<DemoMonthlySale2Screen> {
         FlSpot(13, 2.5),
       ],
       isCurved: true,
-      colors: [deepSkyBlue],
+      color: deepSkyBlue,
       barWidth: 8,
       isStrokeCapRound: true,
       dotData: FlDotData(

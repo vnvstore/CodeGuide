@@ -58,7 +58,7 @@ class _DemoMWRichTextScreenState extends State<DemoMWRichTextScreen> {
               Text("Text With Icon", style: boldTextStyle(size: 18)).paddingOnly(top: 16, bottom: 16),
               RichText(
                 text: TextSpan(
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyMedium,
                   children: [
                     WidgetSpan(child: Padding(padding: EdgeInsets.only(right: 10), child: Icon(Icons.settings, size: 18))),
                     TextSpan(text: "Settings", style: primaryTextStyle(color: appStore.textPrimaryColor)),

@@ -82,14 +82,16 @@ class DemoLineChartScreenState extends State<DemoLineChartScreen> {
                   FlSpot(11, 4),
                 ],
                 isCurved: true,
-                colors: gradientColor,
+                gradient: LinearGradient(colors: gradientColor),
                 barWidth: 5,
                 dotData: FlDotData(show: false),
                 belowBarData: BarAreaData(
                     show: true,
-                    colors: gradientColor.map((e) {
-                      return e.withOpacity(0.3);
-                    }).toList()),
+                    gradient: LinearGradient(
+                      colors: gradientColor.map((e) {
+                        return e.withValues(alpha: 0.3);
+                      }).toList(),
+                    )),
               ),
             ],
           ),
@@ -102,38 +104,57 @@ class DemoLineChartScreenState extends State<DemoLineChartScreen> {
 class LineTitles {
 
   static getTitleData() => FlTitlesData(
-        leftTitles: SideTitles(
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
             showTitles: true,
-            getTextStyles: (context) => primaryTextStyle(color: borderText),
-            getTitles: (val) {
+            reservedSize: 35,
+            getTitlesWidget: (val, meta) {
+              String text = '';
               switch (val.toInt()) {
                 case 2:
-                  return '10k';
+                  text = '10k';
+                  break;
                 case 5:
-                  return '30k';
+                  text = '30k';
+                  break;
                 case 8:
-                  return '50k';
+                  text = '50k';
+                  break;
               }
-              return '';
+              return SideTitleWidget(
+                meta: meta,
+                child: Text(text, style: primaryTextStyle(color: borderText)),
+              );
             },
-            reservedSize: 35),
+          ),
+        ),
         show: true,
-        bottomTitles: SideTitles(
-          getTextStyles: (context) => boldTextStyle(color: borderText),
-          showTitles: true,
-          margin: 8,
-          reservedSize: 38,
-          getTitles: (val) {
-            switch (val.toInt()) {
-              case 2:
-                return 'MAR';
-              case 5:
-                return 'JUN';
-              case 8:
-                return 'SEP';
-            }
-            return '';
-          },
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            reservedSize: 38,
+            getTitlesWidget: (val, meta) {
+              String text = '';
+              switch (val.toInt()) {
+                case 2:
+                  text = 'MAR';
+                  break;
+                case 5:
+                  text = 'JUN';
+                  break;
+                case 8:
+                  text = 'SEP';
+                  break;
+              }
+              return SideTitleWidget(
+                meta: meta,
+                space: 8,
+                child: Text(text, style: boldTextStyle(color: borderText)),
+              );
+            },
+          ),
         ),
       );
 }

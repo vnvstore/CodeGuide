@@ -86,7 +86,7 @@ class _T14SubscriptionScreenState extends State<T14SubscriptionScreen> {
                           margin: EdgeInsets.only(bottom: 16),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: t14_colorWhite,
+                              backgroundColor: t14_colorWhite,
                               elevation: 0.0,
                               padding: EdgeInsets.all(12),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),

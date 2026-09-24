@@ -49,7 +49,6 @@ class DemoAMAnimatedSizeScreenState extends State<DemoAMAnimatedSizeScreen> with
             child: Container(
               child: AnimatedSize(
                 curve: Curves.easeIn,
-                vsync: this,
                 duration: Duration(seconds: 1),
                 child: FlutterLogo(
                   size: _size,

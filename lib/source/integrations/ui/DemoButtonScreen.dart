@@ -21,9 +21,9 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
   String changeText = 'Login';
 
   //   List of the Reaction on the click of button
-  List<Reaction> reaction = [
-    Reaction(
-      id: 1,
+  List<Reaction<int>> reaction = [
+    Reaction<int>(
+      value: 1,
       previewIcon: _buildPreviewIcon('images/Reaction/images/like.gif'),
       icon: _buildIcon(
         'images/Reaction/images/like_fill.png',
@@ -31,8 +31,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Color(0XFF3b5998),
       ),
     ),
-    Reaction(
-      id: 2,
+    Reaction<int>(
+      value: 2,
       previewIcon: _buildPreviewIcon('images/Reaction/images/love.gif'),
       icon: _buildIcon(
         'images/Reaction/images/love.png',
@@ -40,8 +40,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Color(0XFFed5168),
       ),
     ),
-    Reaction(
-      id: 3,
+    Reaction<int>(
+      value: 3,
       previewIcon: _buildPreviewIcon('images/Reaction/images/wow.gif'),
       icon: _buildIcon(
         'images/Reaction/images/wow.png',
@@ -49,8 +49,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Color(0XFFffda6b),
       ),
     ),
-    Reaction(
-      id: 4,
+    Reaction<int>(
+      value: 4,
       previewIcon: _buildPreviewIcon('images/Reaction/images/haha.gif'),
       icon: _buildIcon(
         'images/Reaction/images/haha.png',
@@ -58,8 +58,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Color(0XFFffda6b),
       ),
     ),
-    Reaction(
-      id: 5,
+    Reaction<int>(
+      value: 5,
       previewIcon: _buildPreviewIcon('images/Reaction/images/sad.gif'),
       icon: _buildIcon(
         'images/Reaction/images/sad.png',
@@ -67,8 +67,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Color(0XFFffda6b),
       ),
     ),
-    Reaction(
-      id: 6,
+    Reaction<int>(
+      value: 6,
       previewIcon: _buildPreviewIcon('images/Reaction/images/angry.gif'),
       icon: _buildIcon(
         'images/Reaction/images/angry.png',
@@ -79,9 +79,9 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
   ];
 
   //   List of the Reaction on the click of button
-  List<Reaction> reaction2 = [
-    Reaction(
-      id: 1,
+  List<Reaction<int>> reaction2 = [
+    Reaction<int>(
+      value: 1,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/whatsapp.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -89,8 +89,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Colors.grey[600],
       ),
     ),
-    Reaction(
-      id: 2,
+    Reaction<int>(
+      value: 2,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/fb2.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -98,8 +98,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Colors.grey[600],
       ),
     ),
-    Reaction(
-      id: 3,
+    Reaction<int>(
+      value: 3,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/wordpress.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -107,8 +107,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Colors.grey[600],
       ),
     ),
-    Reaction(
-      id: 4,
+    Reaction<int>(
+      value: 4,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/map.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -116,8 +116,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Colors.grey[600],
       ),
     ),
-    Reaction(
-      id: 5,
+    Reaction<int>(
+      value: 5,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/linkedin.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -125,8 +125,8 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
         Colors.grey[600],
       ),
     ),
-    Reaction(
-      id: 6,
+    Reaction<int>(
+      value: 6,
       previewIcon: _buildPreviewIcon('images/Reaction/images/SocialMedia/youtube.png'),
       icon: _buildIcon(
         'images/Reaction/images/SocialMedia/media.png',
@@ -170,67 +170,62 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              FlutterReactionButton(
-                onReactionChanged: (reaction, index) {
-                  // ignore: deprecated_member_use
-                  print('reaction selected id: ${reaction.id}');
+              ReactionButton<int>(
+                itemSize: Size(40, 40),
+                onReactionChanged: (reaction) {
+                  if (reaction != null) {
+                    print('reaction selected id: ${reaction.value}');
+                  }
                 },
                 //  Apply the list
                 reactions: reaction,
                 // Specify the Elevation.
                 boxElevation: 10,
                 // Initial reaction when the screen loads
-                initialReaction: Reaction(
-                  id: 0,
+                selectedReaction: Reaction<int>(
+                  value: 0,
                   previewIcon: _buildPreviewIcon('images/Reaction/images/like.png'),
                   icon: _buildIcon('images/Reaction/images/like.png', 'Like', Colors.grey[600]),
                 ),
-                // Position of the reaction box can be set to top and Bottom
-                boxPosition: Position.TOP,
               ),
-              FlutterReactionButton(
-                onReactionChanged: (reaction, index) {
+              ReactionButton<int>(
+                itemSize: Size(40, 40),
+                onReactionChanged: (reaction) {
+                  if (reaction == null) return;
                   //  Handle the respose of the reaction the user select.
                   String message = '';
-                  // ignore: deprecated_member_use
-                  print('reaction selected id: ${reaction.id}');
-                  // ignore: deprecated_member_use
-                  if (reaction.id == 1) {
+                  print('reaction selected id: ${reaction.value}');
+                  if (reaction.value == 1) {
                     setState(
                       () {
                         message = "Whatsapp";
                       },
                     );
-                  // ignore: deprecated_member_use
-                  } else if (reaction.id == 2) {
+                  } else if (reaction.value == 2) {
                     setState(
                       () {
                         message = "Facebook";
                       },
                     );
-                  // ignore: deprecated_member_use
-                  } else if (reaction.id == 3) {
+                  } else if (reaction.value == 3) {
                     setState(
                       () {
                         message = "Wordpress";
                       },
                     );
-                  // ignore: deprecated_member_use
-                  } else if (reaction.id == 4) {
+                  } else if (reaction.value == 4) {
                     setState(
                       () {
                         message = "Map";
                       },
                     );
-                  // ignore: deprecated_member_use
-                  } else if (reaction.id == 5) {
+                  } else if (reaction.value == 5) {
                     setState(
                       () {
                         message = "Linkedin";
                       },
                     );
-                  // ignore: deprecated_member_use
-                  } else if (reaction.id == 6) {
+                  } else if (reaction.value == 6) {
                     setState(
                       () {
                         message = "Youtube";
@@ -241,11 +236,10 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
                 },
                 reactions: reaction2,
                 boxRadius: 10,
-                initialReaction: Reaction(
-                  id: 0,
+                selectedReaction: Reaction<int>(
+                  value: 0,
                   icon: _buildIcon('images/Reaction/images/SocialMedia/media.png', 'Contact us', Colors.grey[600]),
                 ),
-                boxPosition: Position.BOTTOM,
               ),
             ],
           ),
@@ -265,7 +259,7 @@ class DemoButtonScreenState extends State<DemoButtonScreen> {
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                 padding: EdgeInsets.all(0.0),
-                primary: Color(0xFF8998FF),
+                backgroundColor: Color(0xFF8998FF),
               ),
               child: _state != 1
                   ? Text(

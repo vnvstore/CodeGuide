@@ -50,85 +50,121 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
             ),
             titlesData: FlTitlesData(
               show: true,
-              topTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(size: 10, color: white),
-                margin: 10,
-                rotateAngle: 0,
-                getTitles: (double value) {
-                  switch (value.toInt()) {
-                    case 0:
-                      return 'Mon';
-                    case 1:
-                      return 'Tue';
-                    case 2:
-                      return 'Wed';
-                    case 3:
-                      return 'Thu';
-                    case 4:
-                      return 'Fri';
-                    case 5:
-                      return 'Sat';
-                    case 6:
-                      return 'Sun';
-                    default:
-                      return '';
-                  }
-                },
+              topTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  reservedSize: 24,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text;
+                    switch (value.toInt()) {
+                      case 0:
+                        text = 'Mon';
+                        break;
+                      case 1:
+                        text = 'Tue';
+                        break;
+                      case 2:
+                        text = 'Wed';
+                        break;
+                      case 3:
+                        text = 'Thu';
+                        break;
+                      case 4:
+                        text = 'Fri';
+                        break;
+                      case 5:
+                        text = 'Sat';
+                        break;
+                      case 6:
+                        text = 'Sun';
+                        break;
+                      default:
+                        text = '';
+                        break;
+                    }
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 10,
+                      child: Text(text, style: boldTextStyle(size: 10, color: white)),
+                    );
+                  },
+                ),
               ),
-              bottomTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(color: white, size: 10),
-                margin: 10,
-                rotateAngle: 0,
-                getTitles: (double value) {
-                  switch (value.toInt()) {
-                    case 0:
-                      return 'Mon';
-                    case 1:
-                      return 'Tue';
-                    case 2:
-                      return 'Wed';
-                    case 3:
-                      return 'Thu';
-                    case 4:
-                      return 'Fri';
-                    case 5:
-                      return 'Sat';
-                    case 6:
-                      return 'Sun';
-                    default:
-                      return '';
-                  }
-                },
+              bottomTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  reservedSize: 24,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text;
+                    switch (value.toInt()) {
+                      case 0:
+                        text = 'Mon';
+                        break;
+                      case 1:
+                        text = 'Tue';
+                        break;
+                      case 2:
+                        text = 'Wed';
+                        break;
+                      case 3:
+                        text = 'Thu';
+                        break;
+                      case 4:
+                        text = 'Fri';
+                        break;
+                      case 5:
+                        text = 'Sat';
+                        break;
+                      case 6:
+                        text = 'Sun';
+                        break;
+                      default:
+                        text = '';
+                        break;
+                    }
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 10,
+                      child: Text(text, style: boldTextStyle(color: white, size: 10)),
+                    );
+                  },
+                ),
               ),
-              leftTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(color: white, size: 10),
-                rotateAngle: 45,
-                getTitles: (double value) {
-                  if (value == 0) {
-                    return '0';
-                  }
-                  return '${value.toInt()}0k';
-                },
-                interval: 5,
-                margin: 8,
-                reservedSize: 30,
+              leftTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  interval: 5,
+                  reservedSize: 30,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text = value == 0 ? '0' : '${value.toInt()}0k';
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 8,
+                      child: Transform.rotate(
+                        angle: 45 * 3.141592653589793 / 180,
+                        child: Text(text, style: boldTextStyle(color: white, size: 10)),
+                      ),
+                    );
+                  },
+                ),
               ),
-              rightTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(color: white, size: 10),
-                rotateAngle: 90,
-                getTitles: (double value) {
-                  if (value == 0) {
-                    return '0';
-                  }
-                  return '${value.toInt()}0k';
-                },
-                interval: 5,
-                margin: 8,
-                reservedSize: 30,
+              rightTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  interval: 5,
+                  reservedSize: 30,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text = value == 0 ? '0' : '${value.toInt()}0k';
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 8,
+                      child: Transform.rotate(
+                        angle: 90 * 3.141592653589793 / 180,
+                        child: Text(text, style: boldTextStyle(color: white, size: 10)),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             gridData: FlGridData(
@@ -152,7 +188,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 0,
                 barRods: [
                   BarChartRodData(
-                    y: 15.1,
+                    toY: 15.1,
                     width: barWidth,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6)),
                     rodStackItems: [
@@ -168,7 +204,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 1,
                 barRods: [
                   BarChartRodData(
-                    y: -14,
+                    toY: -14,
                     width: barWidth,
                     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(6), bottomRight: Radius.circular(6)),
                     rodStackItems: [
@@ -184,7 +220,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 2,
                 barRods: [
                   BarChartRodData(
-                    y: 13,
+                    toY: 13,
                     width: barWidth,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6)),
                     rodStackItems: [
@@ -200,7 +236,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 3,
                 barRods: [
                   BarChartRodData(
-                    y: 13.5,
+                    toY: 13.5,
                     width: barWidth,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6)),
                     rodStackItems: [
@@ -216,7 +252,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 4,
                 barRods: [
                   BarChartRodData(
-                    y: -18,
+                    toY: -18,
                     width: barWidth,
                     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(6), bottomRight: Radius.circular(6)),
                     rodStackItems: [
@@ -232,7 +268,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 5,
                 barRods: [
                   BarChartRodData(
-                    y: -17,
+                    toY: -17,
                     width: barWidth,
                     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(6), bottomRight: Radius.circular(6)),
                     rodStackItems: [
@@ -248,7 +284,7 @@ class DemoBarChart2ScreenState extends State<DemoBarChart2Screen> {
                 x: 6,
                 barRods: [
                   BarChartRodData(
-                    y: 16,
+                    toY: 16,
                     width: barWidth,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6)),
                     rodStackItems: [

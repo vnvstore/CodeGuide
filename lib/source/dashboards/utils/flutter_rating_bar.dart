@@ -589,7 +589,7 @@ class _RatingBarState extends State<RatingBar> {
             valueListenable: _glow,
             builder: (context, dynamic glow, _) {
               if (glow && widget.glow) {
-                Color glowColor = widget.glowColor ?? Theme.of(context).accentColor;
+                Color glowColor = widget.glowColor ?? Theme.of(context).colorScheme.secondary;
                 return DecoratedBox(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,

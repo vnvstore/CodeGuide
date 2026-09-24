@@ -43,24 +43,24 @@ class _DemoMWStepperScreen2State extends State<DemoMWStepperScreen2> {
     return SafeArea(
       child: Scaffold(
         body: Theme(
-          data: ThemeData(backgroundColor: context.scaffoldBackgroundColor),
+          data: ThemeData(colorScheme: ColorScheme.fromSwatch(backgroundColor: context.scaffoldBackgroundColor)),
           child: Stepper(
             steps: steps,
             physics: BouncingScrollPhysics(),
             type: StepperType.vertical,
             currentStep: this.currStep,
-            controlsBuilder: (BuildContext context, {VoidCallback? onStepContinue, VoidCallback? onStepCancel}) {
+            controlsBuilder: (BuildContext context,ControlsDetails controls) {
               return Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   TextButton(
-                    onPressed: onStepContinue,
+                    onPressed: controls.onStepContinue,
                     child: Text('CONTINUE', style: secondaryTextStyle()),
                   ),
                   10.width,
                   TextButton(
-                    onPressed: onStepCancel,
+                    onPressed: controls.onStepCancel,
                     child: Text('CANCEL', style: secondaryTextStyle()),
                   ),
                 ],

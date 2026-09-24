@@ -119,7 +119,7 @@ class T3List extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: t3_white,
+                  backgroundColor: t3_white,
                   elevation: 4,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0), bottomRight: Radius.circular(10.0))),
                   padding: EdgeInsets.all(0.0),

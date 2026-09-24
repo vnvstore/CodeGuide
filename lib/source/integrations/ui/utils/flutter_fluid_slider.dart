@@ -277,7 +277,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
   bool get _isInteractive => widget.onChanged != null;
 
   TextStyle _currentValTextStyle(BuildContext context) {
-    final TextStyle defaultStyle = widget.showDecimalValue ? Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold) : Theme.of(context).textTheme.headline1!.copyWith(fontWeight: FontWeight.bold);
+    final TextStyle defaultStyle = widget.showDecimalValue ? Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold) : Theme.of(context).textTheme.displayLarge!.copyWith(fontWeight: FontWeight.bold);
 
     return widget.valueTextStyle ?? defaultStyle;
   }
@@ -331,7 +331,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
             ),
           ),
           child: Stack(
-            overflow: Overflow.visible,
+            clipBehavior: Clip.none,
             children: <Widget>[
               _MinMaxLabels(
                 textStyle: widget.labelsTextStyle,

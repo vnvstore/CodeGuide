@@ -53,7 +53,7 @@ class DemoStackedChart6ScreenState extends State<DemoStackedChart6Screen> {
                 primaryXAxis: CategoryAxis(),
                 title: ChartTitle(text: 'Half yearly sales analysis'),
                 tooltipBehavior: TooltipBehavior(enable: true),
-                series: <ChartSeries<SalesData, String>>[
+                series: <CartesianSeries<SalesData, String>>[
                   LineSeries<SalesData, String>(
                       dataSource: data,
                       xValueMapper: (SalesData sales, _) => sales.year,

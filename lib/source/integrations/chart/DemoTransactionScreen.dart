@@ -1,5 +1,4 @@
 import 'package:fl_chart/fl_chart.dart';      //https://pub.dev/packages/fl_chart
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';      //https://pub.dev/packages/nb_utils
 
@@ -77,10 +76,10 @@ class DemoTransactionScreenState extends State<DemoTransactionScreen> {
             maxY: 20,
             barTouchData: BarTouchData(
                 touchTooltipData: BarTouchTooltipData(
-                  tooltipBgColor: grey,
+                  getTooltipColor: (group) => grey,
                 ),
-                touchCallback: (response) {
-                  if (response.spot == null) {
+                touchCallback: (FlTouchEvent event, response) {
+                  if (response == null || response.spot == null) {
                     setState(() {
                       touchedGroupIndex = -1;
                       showingBarGroups = List.of(rawBarGroups);
@@ -91,7 +90,7 @@ class DemoTransactionScreenState extends State<DemoTransactionScreen> {
                   touchedGroupIndex = response.spot!.touchedBarGroupIndex;
 
                   setState(() {
-                    if (response.touchInput is PointerExitEvent || response.touchInput is PointerUpEvent) {
+                    if (!event.isInterestedForInteractions || event is FlTapUpEvent || event is FlPanEndEvent) {
                       touchedGroupIndex = -1;
                       showingBarGroups = List.of(rawBarGroups);
                     } else {
@@ -99,13 +98,13 @@ class DemoTransactionScreenState extends State<DemoTransactionScreen> {
                       if (touchedGroupIndex != -1) {
                         double sum = 0.0;
                         for (var rod in showingBarGroups[touchedGroupIndex].barRods) {
-                          sum += rod.y;
+                          sum += rod.toY;
                         }
                         final avg = sum / showingBarGroups[touchedGroupIndex].barRods.length;
 
                         showingBarGroups[touchedGroupIndex] = showingBarGroups[touchedGroupIndex].copyWith(
                           barRods: showingBarGroups[touchedGroupIndex].barRods.map((rod) {
-                            return rod.copyWith(y: avg);
+                            return rod.copyWith(toY: avg);
                           }).toList(),
                         );
                       }
@@ -114,47 +113,70 @@ class DemoTransactionScreenState extends State<DemoTransactionScreen> {
                 }),
             titlesData: FlTitlesData(
               show: true,
-              bottomTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(color: borderText),
-                margin: 20,
-                getTitles: (double value) {
-                  switch (value.toInt()) {
-                    case 0:
-                      return 'Mn';
-                    case 1:
-                      return 'Te';
-                    case 2:
-                      return 'Wd';
-                    case 3:
-                      return 'Tu';
-                    case 4:
-                      return 'Fr';
-                    case 5:
-                      return 'St';
-                    case 6:
-                      return 'Sn';
-                    default:
-                      return '';
-                  }
-                },
+              topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              bottomTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  reservedSize: 32,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text;
+                    switch (value.toInt()) {
+                      case 0:
+                        text = 'Mn';
+                        break;
+                      case 1:
+                        text = 'Te';
+                        break;
+                      case 2:
+                        text = 'Wd';
+                        break;
+                      case 3:
+                        text = 'Tu';
+                        break;
+                      case 4:
+                        text = 'Fr';
+                        break;
+                      case 5:
+                        text = 'St';
+                        break;
+                      case 6:
+                        text = 'Sn';
+                        break;
+                      default:
+                        text = '';
+                        break;
+                    }
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 20,
+                      child: Text(text, style: boldTextStyle(color: borderText)),
+                    );
+                  },
+                ),
               ),
-              leftTitles: SideTitles(
-                showTitles: true,
-                getTextStyles: (context) => boldTextStyle(color: borderText),
-                margin: 32,
-                reservedSize: 14,
-                getTitles: (value) {
-                  if (value == 0) {
-                    return '1K';
-                  } else if (value == 10) {
-                    return '5K';
-                  } else if (value == 19) {
-                    return '10K';
-                  } else {
-                    return '';
-                  }
-                },
+              leftTitles: AxisTitles(
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  reservedSize: 28,
+                  getTitlesWidget: (double value, TitleMeta meta) {
+                    String text;
+                    if (value == 0) {
+                      text = '1K';
+                    } else if (value == 10) {
+                      text = '5K';
+                    } else if (value == 19) {
+                      text = '10K';
+                    } else {
+                      text = '';
+                    }
+                    return SideTitleWidget(
+                      meta: meta,
+                      space: 14,
+                      child: Text(text, style: boldTextStyle(color: borderText)),
+                    );
+                  },
+                ),
               ),
             ),
             borderData: FlBorderData(
@@ -170,13 +192,13 @@ class DemoTransactionScreenState extends State<DemoTransactionScreen> {
   BarChartGroupData makeGroupData(int x, double y1, double y2) {
     return BarChartGroupData(barsSpace: 4, x: x, barRods: [
       BarChartRodData(
-        y: y1,
-        colors: [leftBarColor],
+        toY: y1,
+        color: leftBarColor,
         width: width,
       ),
       BarChartRodData(
-        y: y2,
-        colors: [rightBarColor],
+        toY: y2,
+        color: rightBarColor,
         width: width,
       ),
     ]);

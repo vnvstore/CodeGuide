@@ -49,7 +49,7 @@ class T9ButtonState extends State<T9Button> {
       onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
         textStyle: TextStyle(color: t9_white),
-        primary: t9_colorPrimary,
+        backgroundColor: t9_colorPrimary,
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
         padding: EdgeInsets.all(0.0),

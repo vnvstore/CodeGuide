@@ -520,6 +520,8 @@ class T5ExpandablePanel extends StatelessWidget {
             return CrossAxisAlignment.center;
           case ExpandablePanelHeaderAlignment.bottom:
             return CrossAxisAlignment.end;
+          default:
+            return CrossAxisAlignment.start;
         }
         assert(false);
         return null;

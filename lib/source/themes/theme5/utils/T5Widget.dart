@@ -262,7 +262,8 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 20.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField({this.lastPin, this.fields= 4, this.onSubmit,
+    this.fieldWidth= 40.0, this.fontSize= 20.0, this.isTextObscure= false, this.showFieldAsBox= false}) : assert(fields > 0);
 
   @override
   State createState() {

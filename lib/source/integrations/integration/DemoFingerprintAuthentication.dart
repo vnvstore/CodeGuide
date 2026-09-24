@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';  //https://pub.dev/packages/local_auth
+import 'package:local_auth_android/local_auth_android.dart';
+import 'package:local_auth_darwin/local_auth_darwin.dart';
 import 'package:lottie/lottie.dart';  //https://pub.dev/packages/lottie
 import 'package:nb_utils/nb_utils.dart';  //https://pub.dev/packages/nb_utils
 
@@ -60,23 +61,24 @@ class _DemoFingerprintAuthenticationState extends State<DemoFingerprintAuthentic
 
       authenticated = await auth.authenticate(
         localizedReason: 'Scan your fingerprint to Login',
-        useErrorDialogs: true,
-        stickyAuth: true,
-        //biometricOnly: true,
-        iOSAuthStrings: IOSAuthMessages(
-          cancelButton: 'cancel',
-          goToSettingsButton: 'settings',
-          goToSettingsDescription: 'Please set up your Touch ID.',
-          lockOut: 'Please reenable your Touch ID',
+        options: const AuthenticationOptions(
+          useErrorDialogs: true,
+          stickyAuth: true,
         ),
-        androidAuthStrings: AndroidAuthMessages(
-          signInTitle: "Fingerprint Authentication",
-          //fingerprintRequiredTitle: "Connect to Login",
-          cancelButton: 'Cancel',
-          goToSettingsButton: 'Setting',
-          goToSettingsDescription: 'Please set up your Touch ID.',
-          //fingerprintSuccess: "Authentication Successfully authenticated",
-        ),
+        authMessages: const <AuthMessages>[
+          IOSAuthMessages(
+            cancelButton: 'cancel',
+            goToSettingsButton: 'settings',
+            goToSettingsDescription: 'Please set up your Touch ID.',
+            lockOut: 'Please reenable your Touch ID',
+          ),
+          AndroidAuthMessages(
+            signInTitle: "Fingerprint Authentication",
+            cancelButton: 'Cancel',
+            goToSettingsButton: 'Setting',
+            goToSettingsDescription: 'Please set up your Touch ID.',
+          ),
+        ],
       );
 
       authorized = authenticated;
@@ -212,7 +214,7 @@ class _DemoFingerprintAuthenticationState extends State<DemoFingerprintAuthentic
 }
 
 class HandleError extends StatelessWidget {
-  Color appColorPrimary = Color(0xFF1157FA);
+  final Color appColorPrimary = Color(0xFF1157FA);
   final String? code;
   final String? message;
 

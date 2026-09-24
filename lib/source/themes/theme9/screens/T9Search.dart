@@ -48,7 +48,7 @@ class T9SearchState extends State<T9Search> {
                 children: <Widget>[
                   RichText(
                     text: TextSpan(
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                       children: [
                         WidgetSpan(
                           child: Padding(
@@ -66,7 +66,7 @@ class T9SearchState extends State<T9Search> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       children: [
                         TextSpan(text: t9_lbl_filter, style: TextStyle(fontSize: textSizeMedium, color: t9_colorPrimary)),
                         WidgetSpan(

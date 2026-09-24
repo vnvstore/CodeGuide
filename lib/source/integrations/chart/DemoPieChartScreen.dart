@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:fl_chart/fl_chart.dart';  //https://pub.dev/packages/fl_chart
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';  //https://pub.dev/packages/nb_utils
@@ -53,14 +52,13 @@ class DemoPieChartScreenState extends State<DemoPieChartScreen> {
               height: 300,
               child: PieChart(
                 PieChartData(
-                  pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
+                  pieTouchData: PieTouchData(touchCallback: (FlTouchEvent event, pieTouchResponse) {
                     setState(() {
-                      final desiredTouch = pieTouchResponse.touchInput is! PointerExitEvent && pieTouchResponse.touchInput is! PointerUpEvent;
-                      if (desiredTouch && pieTouchResponse.touchedSection != null) {
-                        touchedIndex = pieTouchResponse.touchedSection!.touchedSectionIndex;
-                      } else {
+                      if (!event.isInterestedForInteractions || pieTouchResponse == null || pieTouchResponse.touchedSection == null) {
                         touchedIndex = -1;
+                        return;
                       }
+                      touchedIndex = pieTouchResponse.touchedSection!.touchedSectionIndex;
                     });
                   }),
                   sections: showingSections(),

@@ -11,7 +11,7 @@ import 'T14Colors.dart';
 Widget t14AppButton(BuildContext context, {required String btnText, Color? bgColor, required double width, required double shape, Function? onPress, Color? txtColor}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      primary: bgColor,
+      backgroundColor: bgColor,
       elevation: 0.0,
       padding: EdgeInsets.all(14),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(shape)),
@@ -85,7 +85,7 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 16.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField({this.lastPin, this.fields = 4, this.onSubmit, this.fieldWidth = 40.0, this.fontSize = 16.0, this.isTextObscure = false, this.showFieldAsBox = false}) : assert(fields > 0);
 
   @override
   State createState() {

@@ -55,7 +55,7 @@ class T6SliderWidget extends StatelessWidget {
                             text(slider.name, textColor: appStore.textPrimaryColor, fontSize: textSizeLargeMedium, fontFamily: fontMedium),
                             RichText(
                               text: TextSpan(
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                                 children: [
                                   WidgetSpan(
                                     child: Padding(

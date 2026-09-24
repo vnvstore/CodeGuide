@@ -16,7 +16,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
   AndroidInitializationSettings? androidInitializationSettings;
-  IOSInitializationSettings? iosInitializationSettings;
+  DarwinInitializationSettings? darwinInitializationSettings;
   late InitializationSettings initializationSettings;
 
   @override
@@ -27,8 +27,8 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
 
   Future<void> init() async {
     androidInitializationSettings = AndroidInitializationSettings('app_icon2');
-    iosInitializationSettings = IOSInitializationSettings();
-    initializationSettings = InitializationSettings(android: androidInitializationSettings, iOS: iosInitializationSettings);
+    darwinInitializationSettings = DarwinInitializationSettings();
+    initializationSettings = InitializationSettings(android: androidInitializationSettings, iOS: darwinInitializationSettings);
 
     await flutterLocalNotificationsPlugin.initialize(initializationSettings);
   }
@@ -47,7 +47,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
           children: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: appColorPrimary,
+                backgroundColor: appColorPrimary,
               ),
               onPressed: () {
                 buildSingleNotification();
@@ -56,7 +56,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
             ).paddingAll(16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: appColorPrimary,
+                backgroundColor: appColorPrimary,
               ),
               onPressed: () {
                 buildMultipleNotification();
@@ -65,7 +65,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
             ).paddingAll(8),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: appColorPrimary,
+                backgroundColor: appColorPrimary,
               ),
               onPressed: () {
                 buildBigPictureNotification();
@@ -74,7 +74,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
             ).paddingAll(16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: appColorPrimary,
+                backgroundColor: appColorPrimary,
               ),
               onPressed: () {
                 buildInboxStyleNotification();
@@ -91,7 +91,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
     AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
       'Channel ID',
       'Channel title',
-      'channel body',
+      channelDescription: 'channel body',
       priority: Priority.high,
       importance: Importance.max,
       icon: "app_icon2",
@@ -107,7 +107,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
     AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
       'Channel ID',
       'Channel title',
-      'channel body',
+      channelDescription: 'channel body',
       priority: Priority.high,
       importance: Importance.max,
       groupKey: 'commonMessage',
@@ -132,7 +132,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
     AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'groupChannelId',
       'groupChannelName',
-      'groupChannelDescription',
+      channelDescription: 'groupChannelDescription',
       styleInformation: inboxStyleInformation,
       groupKey: 'commonMessage',
       setAsGroupSummary: true,
@@ -150,7 +150,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
       contentTitle: 'prokit notification',
     );
 
-    AndroidNotificationDetails bigPictureNoti = AndroidNotificationDetails('bigChannelId', 'bigChannelName', 'bigChannelDescription', styleInformation: bigPictureStyleInformation);
+    AndroidNotificationDetails bigPictureNoti = AndroidNotificationDetails('bigChannelId', 'bigChannelName', channelDescription: 'bigChannelDescription', styleInformation: bigPictureStyleInformation);
 
     NotificationDetails platformChannelSpecifics = NotificationDetails(android: bigPictureNoti);
 
@@ -163,7 +163,7 @@ class DemoLocalNotificationScreenState extends State<DemoLocalNotificationScreen
       contentTitle: "Code Guide",
     );
 
-    AndroidNotificationDetails infoNotification = AndroidNotificationDetails('InboxChannelId', 'InboxChannelName', 'InboxChannelDescription', styleInformation: inboxInfo);
+    AndroidNotificationDetails infoNotification = AndroidNotificationDetails('InboxChannelId', 'InboxChannelName', channelDescription: 'InboxChannelDescription', styleInformation: inboxInfo);
 
     NotificationDetails infoDetails = NotificationDetails(android: infoNotification);
 

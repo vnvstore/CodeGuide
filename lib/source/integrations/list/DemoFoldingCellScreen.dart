@@ -76,8 +76,7 @@ class DemoFoldingCellScreenState extends State<DemoFoldingCellScreen> {
           child: Text("Close"),
           style: TextButton.styleFrom(
             textStyle: TextStyle(color: Colors.white),
-            primary: Colors.indigoAccent,
-
+            foregroundColor: Colors.indigoAccent,
           ),
           //splashColor: Colors.white.withOpacity(0.5),
         ),

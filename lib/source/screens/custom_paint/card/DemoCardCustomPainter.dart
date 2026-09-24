@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class DemoCustomContainerShapeBorder extends CustomPainter {
@@ -8,10 +7,10 @@ class DemoCustomContainerShapeBorder extends CustomPainter {
   final double? radius;
 
   DemoCustomContainerShapeBorder({
-    this.height: 400.0,
-    this.width: 300.0,
+    this.height = 400.0,
+    this.width = 300.0,
     this.fillColor,
-    this.radius: 50.0,
+    this.radius = 50.0,
   });
   @override
   void paint(Canvas canvas, Size size) {
